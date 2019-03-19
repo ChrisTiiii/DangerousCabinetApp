@@ -1,4 +1,4 @@
-package com.example.administrator.dangerouscabinetapp.adpter;
+package com.example.administrator.dangerouscabinetapp.adpter.shop;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -28,6 +28,7 @@ public class GoodsAdapter extends BaseQuickAdapter<GoodsItem, BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, GoodsItem item) {
         helper.setText(R.id.goods_name, item.getName());
+        helper.setText(R.id.goods_num, item.getNum()+"");
         Glide.with(context).load(item.getMip()).into((ImageView) helper.getView(R.id.goods_image));
     }
 }

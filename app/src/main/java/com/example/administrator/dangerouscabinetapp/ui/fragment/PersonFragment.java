@@ -7,11 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.administrator.dangerouscabinetapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Author: create by ZhongMing
@@ -20,6 +26,10 @@ import butterknife.Unbinder;
  */
 public class PersonFragment extends Fragment {
     public volatile static PersonFragment instance;
+    @BindView(R.id.iv_blur)
+    ImageView ivBlur;
+    @BindView(R.id.iv_avatar)
+    ImageView ivAvatar;
     private View rootView;
     Unbinder unbinder;
 
@@ -44,7 +54,24 @@ public class PersonFragment extends Fragment {
         } else {
             rootView = inflater.inflate(R.layout.person_fragment, null);
             unbinder = ButterKnife.bind(this, rootView);
+            initView();
         }
         return rootView;
+    }
+
+    private void initView() {
+        Glide.with(this).load(R.drawable.sanleng)
+                .bitmapTransform(new BlurTransformation(getContext(), 25), new CenterCrop(getContext()))
+                .into(ivBlur);
+
+        Glide.with(this).load(R.drawable.sanleng)
+                .bitmapTransform(new CropCircleTransformation(getContext()))
+                .into(ivAvatar);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

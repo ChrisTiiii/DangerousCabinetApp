@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banner"
+        android:paddingTop="@dimen/dp_20">
+
+        <RelativeLayout
+            android:id="@+id/rel_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dp_8"
+                android:text="六水合硝酸钴(硝酸钴)Co(NO3)2·6H2O外观与性状：红色棱形结晶，易潮解"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_up"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_5">
+
+            <TextView
+                android:id="@+id/goods_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商品编号:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/goods_id"
+                android:paddingLeft="@dimen/dp_8"
+                android:text="0SDC7483ASDJ" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_up"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_8">
+
+            <TextView
+                android:id="@+id/goods_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="剩余数量:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/goods_num"
+                android:paddingLeft="@dimen/dp_8"
+                android:text="2500"
+                android:textColor="@color/crimson" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_num"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/sj_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商家信息:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sj_title"
+                android:paddingLeft="@dimen/dp_8"
+                android:text="江苏三棱智慧物联发展股份有限公司" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel_mid"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/sj_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商家电话:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/sj_number"
+                android:autoLink="all"
+                android:paddingLeft="@dimen/dp_8"
+                android:text="025-834637464"
+                android:textColor="@color/crimson" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@color/tab_checked"
+        android:text="立即购买"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_22" />
+</RelativeLayout>

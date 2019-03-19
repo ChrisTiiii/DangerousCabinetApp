@@ -1,11 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zsg="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ebebef"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/steelblue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_search"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="0dp"
+            android:paddingLeft="8dp"
+            android:text="三棱危化品柜"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_blur"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_blur"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/user_line"
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_line"
+                android:text="三棱"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/user_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/user_line"
+                android:text="182****5882"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.example.administrator.dangerouscabinetapp.weight.person.ItemView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="个人中心" />
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/order"
+        zsg:show_text="我的订单" />
 
-</android.support.constraint.ConstraintLayout>
+    <com.example.administrator.dangerouscabinetapp.weight.person.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/address"
+        zsg:show_text="地址管理" />
+
+    <com.example.administrator.dangerouscabinetapp.weight.person.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        zsg:show_bottomline="false"
+        zsg:show_leftimg="@drawable/pwd"
+        zsg:show_text="更改密码" />
+
+    <com.example.administrator.dangerouscabinetapp.weight.person.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        zsg:show_bottomline="true"
+        zsg:show_leftimg="@drawable/update"
+        zsg:show_text="版本更新" />
+
+    <com.example.administrator.dangerouscabinetapp.weight.person.ItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        zsg:show_bottomline="false"
+        zsg:show_leftimg="@drawable/exit"
+        zsg:show_text="退出登录" />
+</LinearLayout>
+

@@ -1,6 +1,6 @@
 package com.example.administrator.dangerouscabinetapp.ui.fragment;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,9 +16,13 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.administrator.dangerouscabinetapp.R;
-import com.example.administrator.dangerouscabinetapp.adpter.GoodsAdapter;
+import com.example.administrator.dangerouscabinetapp.adpter.shop.GoodsAdapter;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
+import com.example.administrator.dangerouscabinetapp.ui.activity.ShopDetailActivity;
 import com.example.administrator.dangerouscabinetapp.weight.MaterialSearchView;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +48,8 @@ public class ShopFragment extends Fragment {
     RecyclerView recyclerview;
     @BindView(R.id.show_all)
     TextView showAll;
+    @BindView(R.id.refreshLayout)
+    RefreshLayout mRefreshLayout;
     GoodsAdapter adapter;
     List<String> listName;
     List<GoodsItem> listData;
@@ -90,6 +96,9 @@ public class ShopFragment extends Fragment {
         searchView.setVoiceSearch(false); //or true,是否支持声音的
         searchView.setSubmitOnClick(true);  //设置为true后，单击ListView的条目，searchView隐藏。实现数据的搜索
         searchView.setEllipsize(true);   //搜索框的ListView中的Item条目是否是单显示
+        //设置空布局
+        adapter.bindToRecyclerView(recyclerview);
+        adapter.setEmptyView(R.layout.empty_layout);
         for (GoodsItem goods : listData) {
             listName.add(goods.getName());
         }
@@ -110,7 +119,7 @@ public class ShopFragment extends Fragment {
                 break;
             case R.id.show_all:
                 listData.clear();
-                setData();
+//                setData();
                 adapter.notifyDataSetChanged();
                 break;
         }
@@ -124,7 +133,8 @@ public class ShopFragment extends Fragment {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(getContext(), "点击的是：" + listData.get(position).getName(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), ShopDetailActivity.class));
+                //                Toast.makeText(getContext(), "点击的是：" + listData.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
         //数据的监听（在自定义类中已经做了些处理）
@@ -138,7 +148,7 @@ public class ShopFragment extends Fragment {
                 listData.clear();
                 for (String temp : listName) {
                     if (temp.equals(query)) {
-                        listData.add(new GoodsItem(temp, R.drawable.timg));
+                        listData.add(new GoodsItem(temp, R.drawable.timg, "1902个"));
                     }
                 }
                 adapter.notifyDataSetChanged();
@@ -153,6 +163,29 @@ public class ShopFragment extends Fragment {
             }
         });
 
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                listData.clear();
+                setData();
+                adapter.notifyDataSetChanged();
+                mRefreshLayout.finishRefresh();
+            }
+        });
+
+        mRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                for (int i = 0; i < 10; i++) {
+                    GoodsItem goodsItem = new GoodsItem("化学剂" + i, R.drawable.timg, i * 15 + "个");
+                    listData.add(goodsItem);
+                }
+                adapter.notifyDataSetChanged();
+                refreshlayout.finishLoadmore();
+            }
+        });
+
+
     }
 
 
@@ -160,16 +193,16 @@ public class ShopFragment extends Fragment {
      * 设置假数据
      */
     public void setData() {
-        listData.add(new GoodsItem("环己烷", R.drawable.timg));
-        listData.add(new GoodsItem("甲酸", R.drawable.timg));
-        listData.add(new GoodsItem("碳酸钙", R.drawable.timg));
-        listData.add(new GoodsItem("六水合硝酸钴(硝酸钴)", R.drawable.timg));
-        listData.add(new GoodsItem("硫酸锰", R.drawable.timg));
-        listData.add(new GoodsItem("氢氧化钠", R.drawable.timg));
-        listData.add(new GoodsItem("氟化钠", R.drawable.timg));
-        listData.add(new GoodsItem("碳酸氢钠", R.drawable.timg));
-        listData.add(new GoodsItem("硫酸镁", R.drawable.timg));
-        listData.add(new GoodsItem("聚氯乙烯", R.drawable.timg));
+        listData.add(new GoodsItem("环己烷", R.drawable.timg, 67 + ""));
+        listData.add(new GoodsItem("甲酸", R.drawable.timg, 97 + ""));
+        listData.add(new GoodsItem("碳酸钙", R.drawable.timg, 345 + ""));
+        listData.add(new GoodsItem("六水合硝酸钴", R.drawable.timg, 66 + ""));
+        listData.add(new GoodsItem("硫酸锰", R.drawable.timg, 86 + ""));
+        listData.add(new GoodsItem("氢氧化钠", R.drawable.timg, 89 + ""));
+        listData.add(new GoodsItem("氟化钠", R.drawable.timg, 8443 + ""));
+        listData.add(new GoodsItem("碳酸氢钠", R.drawable.timg, 293 + ""));
+        listData.add(new GoodsItem("硫酸镁", R.drawable.timg, 1 + ""));
+        listData.add(new GoodsItem("聚氯乙烯", R.drawable.timg, 39 + ""));
     }
 
 }

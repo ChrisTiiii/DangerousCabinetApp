@@ -10,7 +10,7 @@ import android.support.v4.app.Person;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.WindowManager;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout content;
     @BindView(R.id.bottomNavigationView)
     BottomNavigationView bottomNavigationView;
-
     List<Fragment> listFragment;
     private int lastfragment;//用于记录上个选择的Fragmenet
     // 用来计算返回键的点击间隔时间
@@ -41,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //方式二：这句代码必须写在setContentView()方法的前面
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
