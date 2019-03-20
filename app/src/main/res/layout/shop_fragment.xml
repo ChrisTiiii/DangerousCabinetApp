@@ -21,7 +21,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:paddingLeft="@dimen/dp_8"
-                android:text="三棱危化品柜"
+                android:text="化学商城"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -70,7 +70,7 @@
 
     </LinearLayout>
 
-    <com.example.administrator.dangerouscabinetapp.weight.MaterialSearchView
+    <com.example.administrator.dangerouscabinetapp.weight.search.MaterialSearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

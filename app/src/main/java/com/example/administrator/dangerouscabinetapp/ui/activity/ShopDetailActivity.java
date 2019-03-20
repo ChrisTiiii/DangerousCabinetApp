@@ -3,6 +3,8 @@ package com.example.administrator.dangerouscabinetapp.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.widget.ImageView;
 
 import com.example.administrator.dangerouscabinetapp.R;
 import com.example.administrator.dangerouscabinetapp.utils.MyImageLoader;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Author: create by ZhongMing
@@ -24,6 +27,8 @@ import butterknife.ButterKnife;
 public class ShopDetailActivity extends AppCompatActivity {
     @BindView(R.id.banner)
     Banner mBanner;
+    @BindView(R.id.img_back)
+    ImageView imgBack;
     private MyImageLoader mMyImageLoader;
     private ArrayList<Integer> imagePath;
     private ArrayList<String> imageTitle;
@@ -31,6 +36,7 @@ public class ShopDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.shop_detail);
         ButterKnife.bind(this);
         initData();
@@ -75,4 +81,8 @@ public class ShopDetailActivity extends AppCompatActivity {
                 }).start();//开始调用的方法，启动轮播图。
     }
 
+    @OnClick(R.id.img_back)
+    public void onViewClicked() {
+        finish();
+    }
 }

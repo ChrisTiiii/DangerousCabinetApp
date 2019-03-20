@@ -1,8 +1,6 @@
 package com.example.administrator.dangerouscabinetapp.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +15,7 @@ import com.example.administrator.dangerouscabinetapp.R;
 import com.example.administrator.dangerouscabinetapp.adpter.cabinet.CabinetGoodsAdapter;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.utils.DialogUtil;
-import com.example.administrator.dangerouscabinetapp.weight.MaterialSearchView;
+import com.example.administrator.dangerouscabinetapp.weight.search.MaterialSearchView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +41,8 @@ public class CabinetActivity extends AppCompatActivity {
     CabinetGoodsAdapter adapter;
     List<String> listName;
     List<GoodsItem> listData;
+    @BindView(R.id.img_back)
+    ImageView imgBack;
 
     @Override
 
@@ -161,5 +161,10 @@ public class CabinetActivity extends AppCompatActivity {
         listData.add(new GoodsItem("碳酸氢钠", R.drawable.timg));
         listData.add(new GoodsItem("硫酸镁", R.drawable.timg));
         listData.add(new GoodsItem("聚氯乙烯", R.drawable.timg));
+    }
+
+    @OnClick(R.id.img_back)
+    public void onViewClicked() {
+        finish();
     }
 }

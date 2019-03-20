@@ -1,4 +1,4 @@
-package com.example.administrator.dangerouscabinetapp.weight;
+package com.example.administrator.dangerouscabinetapp.weight.search;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

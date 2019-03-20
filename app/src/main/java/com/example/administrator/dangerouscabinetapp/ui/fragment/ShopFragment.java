@@ -19,7 +19,7 @@ import com.example.administrator.dangerouscabinetapp.R;
 import com.example.administrator.dangerouscabinetapp.adpter.shop.GoodsAdapter;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.ui.activity.ShopDetailActivity;
-import com.example.administrator.dangerouscabinetapp.weight.MaterialSearchView;
+import com.example.administrator.dangerouscabinetapp.weight.search.MaterialSearchView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;

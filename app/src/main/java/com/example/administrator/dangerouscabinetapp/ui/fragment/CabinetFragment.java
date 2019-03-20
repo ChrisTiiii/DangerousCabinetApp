@@ -16,6 +16,7 @@ import com.example.administrator.dangerouscabinetapp.R;
 import com.example.administrator.dangerouscabinetapp.adpter.cabinet.CabinetManagerApdater;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.ui.activity.CabinetActivity;
+import com.example.administrator.dangerouscabinetapp.ui.activity.TempControlActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,16 +84,19 @@ public class CabinetFragment extends Fragment {
                     case 1:
                         startActivity(new Intent(getContext(), CabinetActivity.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(getContext(), TempControlActivity.class));
+                        break;
                 }
             }
         });
     }
 
     private void setData() {
-        list.add(new GoodsItem("视频监控", R.mipmap.ic_launcher));
-        list.add(new GoodsItem("柜内查询", R.mipmap.ic_launcher));
-        list.add(new GoodsItem("柜体状态", R.mipmap.ic_launcher));
-        list.add(new GoodsItem("远程开门", R.mipmap.ic_launcher));
+        list.add(new GoodsItem("视频监控", R.drawable.img1));
+        list.add(new GoodsItem("柜内查询", R.drawable.state));
+        list.add(new GoodsItem("柜体状态", R.drawable.img2));
+        list.add(new GoodsItem("远程开门", R.drawable.img3));
     }
 
     @Override

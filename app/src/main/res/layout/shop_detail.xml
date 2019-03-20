@@ -4,10 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/steelblue">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dp_8"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_search"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@+id/img_back"
+            android:paddingLeft="8dp"
+            android:text="化学商城"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
     <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"
+        android:layout_below="@+id/rl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
