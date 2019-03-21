@@ -10,6 +10,8 @@ import android.app.Application;
 public class MyApp extends Application {
     public volatile static MyApp myApp;
 
+    public static final int CHOOSE_GOODS_NUMBER = 0x32345;
+
     public static synchronized MyApp getInstance() {
         if (myApp == null) {
             synchronized (MyApp.class) {

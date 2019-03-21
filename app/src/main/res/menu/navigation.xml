@@ -5,6 +5,11 @@
         android:icon="@drawable/shop"
         android:title="商城" />
     <item
+        android:id="@+id/sq"
+        android:icon="@drawable/sq"
+        android:title="申请" />
+
+    <item
         android:id="@+id/sp"
         android:icon="@drawable/sp"
         android:title="审批" />

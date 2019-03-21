@@ -8,6 +8,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="啥玩意也没有" />
+        android:text="暂无更多数据,请尝试下拉刷新" />
 
 </LinearLayout>

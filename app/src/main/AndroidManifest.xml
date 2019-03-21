@@ -28,6 +28,7 @@
             android:name=".ui.activity.CabinetActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.activity.TempControlActivity" />
+        <activity android:name=".ui.activity.MenuActivity" />
     </application>
 
 </manifest>

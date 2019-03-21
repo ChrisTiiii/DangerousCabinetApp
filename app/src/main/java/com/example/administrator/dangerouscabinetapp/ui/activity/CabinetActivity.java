@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.administrator.dangerouscabinetapp.R;
-import com.example.administrator.dangerouscabinetapp.adpter.cabinet.CabinetGoodsAdapter;
+import com.example.administrator.dangerouscabinetapp.ui.adpter.cabinet.CabinetGoodsAdapter;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.utils.DialogUtil;
 import com.example.administrator.dangerouscabinetapp.weight.search.MaterialSearchView;
@@ -54,6 +54,8 @@ public class CabinetActivity extends AppCompatActivity {
         initData();
         initEvent();
     }
+
+
 
     /**
      * 初始化数据
@@ -166,5 +168,10 @@ public class CabinetActivity extends AppCompatActivity {
     @OnClick(R.id.img_back)
     public void onViewClicked() {
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

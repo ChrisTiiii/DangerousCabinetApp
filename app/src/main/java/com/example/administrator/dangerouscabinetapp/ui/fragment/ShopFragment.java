@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.administrator.dangerouscabinetapp.R;
-import com.example.administrator.dangerouscabinetapp.adpter.shop.GoodsAdapter;
+import com.example.administrator.dangerouscabinetapp.ui.adpter.shop.GoodsAdapter;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.ui.activity.ShopDetailActivity;
 import com.example.administrator.dangerouscabinetapp.weight.search.MaterialSearchView;
@@ -134,7 +134,6 @@ public class ShopFragment extends Fragment {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 startActivity(new Intent(getContext(), ShopDetailActivity.class));
-                //                Toast.makeText(getContext(), "点击的是：" + listData.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
         //数据的监听（在自定义类中已经做了些处理）

@@ -1,4 +1,4 @@
-package com.example.administrator.dangerouscabinetapp.adpter.shop;
+package com.example.administrator.dangerouscabinetapp.ui.adpter.shop;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

@@ -30,6 +30,12 @@ public class GoodsItem {
         this.mip = mip;
     }
 
+    public GoodsItem(String id, String name, String num) {
+        this.name = name;
+        this.num = num;
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }

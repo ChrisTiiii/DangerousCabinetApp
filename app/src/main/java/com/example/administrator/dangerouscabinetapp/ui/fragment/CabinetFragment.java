@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.administrator.dangerouscabinetapp.R;
-import com.example.administrator.dangerouscabinetapp.adpter.cabinet.CabinetManagerApdater;
+import com.example.administrator.dangerouscabinetapp.ui.adpter.cabinet.CabinetManagerApdater;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
 import com.example.administrator.dangerouscabinetapp.ui.activity.CabinetActivity;
 import com.example.administrator.dangerouscabinetapp.ui.activity.TempControlActivity;

@@ -1,11 +1,18 @@
 package com.example.administrator.dangerouscabinetapp.utils;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.text.InputType;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.administrator.dangerouscabinetapp.R;
 import com.example.administrator.dangerouscabinetapp.item.GoodsItem;
+
+import org.greenrobot.eventbus.EventBus;
 
 import cn.carbs.android.library.MDDialog;
 
@@ -35,6 +42,8 @@ public class DialogUtil {
     public void setGoodsItem(GoodsItem goodsItem) {
         this.goodsItem = goodsItem;
     }
+
+
 
     public void showDialog(final Context context, int type) {
         switch (type) {
@@ -69,6 +78,11 @@ public class DialogUtil {
                         .setWidthMaxDp(600)
                         .create()
                         .show();
+                break;
+
+            case 2:
+
+
                 break;
         }
 

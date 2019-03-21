@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.administrator.dangerouscabinetapp.ui.fragment.CabinetFragment;
 import com.example.administrator.dangerouscabinetapp.ui.fragment.PersonFragment;
+import com.example.administrator.dangerouscabinetapp.ui.fragment.SqFragment;
 import com.example.administrator.dangerouscabinetapp.ui.fragment.ShopFragment;
 import com.example.administrator.dangerouscabinetapp.ui.fragment.SpFragment;
 import com.example.administrator.dangerouscabinetapp.utils.BottomNavigationViewHelper;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         listFragment = new ArrayList<>();
         listFragment.add(ShopFragment.getInstance());
+        listFragment.add(SqFragment.getInstance());
         listFragment.add(SpFragment.getInstance());
         listFragment.add(CabinetFragment.getInstance());
         listFragment.add(PersonFragment.getInstance());
@@ -70,22 +72,28 @@ public class MainActivity extends AppCompatActivity {
                             lastfragment = 0;
                         }
                         return true;
-                    case R.id.sp:
+                    case R.id.sq:
                         if (lastfragment != 1) {
                             switchFragment(lastfragment, 1);
                             lastfragment = 1;
                         }
                         return true;
-                    case R.id.cabinet:
+                    case R.id.sp:
                         if (lastfragment != 2) {
                             switchFragment(lastfragment, 2);
                             lastfragment = 2;
                         }
                         return true;
-                    case R.id.person:
+                    case R.id.cabinet:
                         if (lastfragment != 3) {
                             switchFragment(lastfragment, 3);
                             lastfragment = 3;
+                        }
+                        return true;
+                    case R.id.person:
+                        if (lastfragment != 4) {
+                            switchFragment(lastfragment, 4);
+                            lastfragment = 4;
                         }
                         return true;
                 }
